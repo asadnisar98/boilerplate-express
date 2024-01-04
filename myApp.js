@@ -1,9 +1,12 @@
 let express = require('express');
 let app = express();
 
+const handlerfunc = (req, res) => {
+    res.send('Response String')
+} 
 
 
-console.log('Hello World');
+app.get('/', handlerfunc);
 
 
 
