@@ -12,7 +12,7 @@ const handlerfunc = (req, res) => {
 } 
 
 const jsonhandle = (req, res) => {
-    const message = process.env.MESSAGE_STYLE
+    const message = process.env.MESSAGE_STYLE.toUpperCase();
     app.get(res.json({"message": message}));
 }
 
