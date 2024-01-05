@@ -1,4 +1,5 @@
 let express = require('express');
+require('dotenv').config();
 let app = express();
 
 
@@ -11,7 +12,8 @@ const handlerfunc = (req, res) => {
 } 
 
 const jsonhandle = (req, res) => {
-    app.get(res.json({"message": "Hello json"}));
+    const message = process.env.MESSAGE_STYLE
+    app.get(res.json({"message": message}));
 }
 
 app.get('/json', jsonhandle);
