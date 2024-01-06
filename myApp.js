@@ -12,11 +12,11 @@ const handlerfunc = (req, res) => {
 } 
 
 const jsonhandle = (req, res) => {
-    let response = process.env.MESSAGE_STYLE;
-    if (process.env.MESSAGE_STYLE === "uppercase") {
-        response = "Hello Json".toUpperCase();
+    let response = "Hello Json".toUpperCase(); // now becomes "HELLO WORLD"
+    if (process.env.MESSAGE_STYLE === "allCaps") {
+        response = "Hello json".toUpperCase();
       } else {
-        response = "HELLO JSON";
+        response = "Hello Json";
       }
     app.get(res.json({"message": response}));
 }
